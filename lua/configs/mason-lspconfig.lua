@@ -14,7 +14,11 @@ local function filter(tbl, exclude)
     return res
 end
 
-return {
+-- return {
+--     ensure_installed = filter(my_lsp.servers, ignore_install),
+--     automatic_installation = false,
+-- }
+require("mason-lspconfig").setup({
     ensure_installed = filter(my_lsp.servers, ignore_install),
     automatic_installation = false,
-}
+})
