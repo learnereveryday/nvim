@@ -19,7 +19,3 @@ require("mason-nvim-lint").setup({
     ensure_installed = filter(lint.linters_by_ft, ignore_install),
     automatic_installation = false,
 })
--- require("mason-nvim-lint").setup({
---     ensure_installed = filter(lint.linters_by_ft, ignore_install),
---     automatic_installation = false,
--- })
