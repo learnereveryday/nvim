@@ -24,7 +24,7 @@ vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
-                enable = true, -- tutorial example
+                enable = false, -- tutorial example
             },
             workspace = {
                 library = {
