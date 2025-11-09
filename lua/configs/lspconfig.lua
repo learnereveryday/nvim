@@ -1,11 +1,10 @@
 -- 1. Load NvChad's LSP defaults (on_attach, capabilities, etc.)
 local nvlsp = require("nvchad.configs.lspconfig")
-nvlsp.defaults()
-
 local on_attach = nvlsp.on_attach
 local on_init = nvlsp.on_init
 local capabilities = nvlsp.capabilities
 
+nvlsp.defaults()
 -- 2. List of servers you want enabled
 local servers = { "cssls", "html", "lua_ls", "pyright" }
 
