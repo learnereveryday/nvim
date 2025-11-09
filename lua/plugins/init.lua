@@ -45,6 +45,7 @@ return {
             require("configs.lspconfig")
         end,
     },
+
     {
         "williamboman/mason-lspconfig.nvim",
         event = "VeryLazy",
