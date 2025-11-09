@@ -57,14 +57,8 @@ return {
 
     {
         "ojroques/nvim-osc52",
-        event = "VeryLazy", -- or remove this to load immediately
         config = function()
             local osc52 = require("osc52")
-
-            -- map yank to OSC52 copy
-            vim.keymap.set("n", "<leader>y", osc52.copy_operator, { expr = true })
-            vim.keymap.set("n", "<leader>yy", "<leader>y_", { remap = true })
-            vim.keymap.set("v", "<leader>y", osc52.copy_visual)
 
             -- integrate with clipboard
             vim.g.clipboard = {
@@ -83,17 +77,7 @@ return {
                 },
             }
 
-            vim.opt.clipboard = "unnamedplus"
+            vim.o.clipboard = "unnamedplus"
         end,
     },
-    -- test new blink
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter",
-    -- 	opts = {
-    -- 		ensure_installed = {
-    -- 			"vim", "lua", "vimdoc",
-    --      "html", "css"
-    -- 		},
-    -- 	},
-    -- },
 }

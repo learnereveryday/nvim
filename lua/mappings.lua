@@ -1,14 +1,11 @@
 require("nvchad.mappings")
 
--- add yours here
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("t", "<ESC>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 local builtin = require("telescope.builtin")
 map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 map("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
@@ -19,3 +16,9 @@ map("n", "<leader>/", function()
         previewer = false,
     }))
 end, { desc = "[/] Fuzzily search in current buffer" })
+
+-- map yank to OSC52 copy
+local osc52 = require("osc52")
+map("n", "<leader>y", osc52.copy_operator, { expr = true })
+map("n", "<leader>yy", "<leader>y_", { remap = true })
+map("v", "<leader>y", osc52.copy_visual)
